@@ -1,6 +1,13 @@
 var mysql = require('mysql');
 var db = require('./DB');
-var dbo = require('./dbo');
+var env = process.env;
+var dbo =  {
+    host: env['bebox_mysql_host'],
+    port: env['bebox_mysql_port'],
+    user: env['bebox_mysql_user'],
+    password: env['bebox_mysql_password'],
+    database: env['bebox_mysql_database']
+};
 
 var pool  = mysql.createPool(dbo);
 
