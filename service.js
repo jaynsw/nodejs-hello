@@ -31,7 +31,6 @@ function listUsers() {
         });
         
     }).catch(err => {
-        conn.release();
         throw err;
     });
 }

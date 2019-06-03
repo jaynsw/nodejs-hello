@@ -6,7 +6,7 @@ var cors = require('cors');
 var service = require('../service');
 
 router.use(cors());
-router.get('/list/', (req, res, next) => {
+router.get('/', (req, res, next) => {
 	debug('handler->/user/list/');
 	service.listUsers().then(users => {
 		res.json(users);
